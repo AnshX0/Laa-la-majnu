@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: hsl(51, 57%, 95%);
+  font-family: "Protest Riot", sans-serif;
+}
+
+.container {
+  height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cat-img {
+  width: 30rem;
+  height: 30rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 3.6rem;
+  color: #0c2d57;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+}
+
+.btn {
+  padding: 1.5rem 2.5rem;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  transform-style: preserve-3d;
+
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn--yes {
+  background-color: #40c057;
+}
+
+.btn--yes:hover {
+  background-color: #62d980;
+}
+
+.btn--no {
+  background-color: #f03e3e;
+}
+
+.btn--no:hover {
+  background-color: #ff5f5f;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.music-player {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.better-experience {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-size: large;
+}
+
+/* Add CSS rules for responsiveness */
+@media only screen and (max-width: 768px) {
+  /* CSS rules for screens smaller than 768px (e.g., phones) */
+  .cat-img {
+      width: 20rem;
+      height: 20rem;
+  }
+  .title {
+      font-size: 2.4rem;
+  }
+  .btn {
+      padding: 1rem 1.5rem;
+      font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 769px) {
+  /* CSS rules for screens larger than or equal to 769px (e.g., desktop) */
+  .cat-img {
+      width: 30rem;
+      height: 30rem;
+  }
+  .title {
+      font-size: 3.6rem;
+  }
+  .btn {
+      padding: 1.5rem 2.5rem;
+      font-size: 1.6rem;
+  }
+}
