@@ -11,7 +11,7 @@ const MAX_IMAGES = 10;
 let play = true;
 let noCount = 0;
 
-const ws = new WebSocket('wss://for-tanisha.netlify.app/');
+const ws = new WebSocket('wss://for-tanisha.netlify.app');
 
 document.querySelector('.btn--yes').addEventListener('click', function() {
     // Send 'Yes' message when 'Yes' button is clicked
