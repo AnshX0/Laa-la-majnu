@@ -11,21 +11,23 @@ const MAX_IMAGES = 10;
 let play = true;
 let noCount = 0;
 
-const ws = new WebSocket('wss://for-tanisha.netlify.app/');
-
-document.querySelector('.btn--yes').addEventListener('click', function() {
-    // Send 'Yes' message when 'Yes' button is clicked
-    ws.send('Yes');
-});
-
-document.querySelector('.btn--no').addEventListener('click', function() {
-    // Send 'No' message when 'No' button is clicked
-    ws.send('No');
-});
+async function sendResponse(message) {
+  try {
+    const response = await fetch('/.netlify/functions/send-response', {
+      method: 'POST',
+      body: JSON.stringify({ message }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    const result = await response.json();
+    console.log(result.status);
+  } catch (error) {
+    console.error('Error sending response:', error);
+  }
+}
 
 yesButton.addEventListener("click", function() {
     handleYesClick();
-    ws.send('Yes'); // Send 'Yes' message only when 'Yes' button is clicked
+    sendResponse('Yes');
 });
 
 noButton.addEventListener("click", function() {
@@ -39,6 +41,7 @@ noButton.addEventListener("click", function() {
             play = false;
         }
     }
+    sendResponse('No');
 });
 
 function handleYesClick() {
