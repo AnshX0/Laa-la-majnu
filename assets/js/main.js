@@ -67,7 +67,7 @@ function generateMessage(noCount) {
         "I'll invite you to a pizza 🍕",
         "Then a chocolate cake 🍫",
         "We'll watch movies 🎥",
-        "We'll go Gwarighat 🏖️",
+        "We'll go xyz 🏖️",
         "We'll play video games together 👾",
         "I'm gonna cry...! 😭",
         "You're breaking my heart 💔",
