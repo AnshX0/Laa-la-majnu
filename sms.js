@@ -8,8 +8,8 @@ function sendTextMessage(response) {
     client.messages
         .create({
             body: `The response is: ${response}`,
-            from: '+17744841681',
-            to: '+917425856996'
+            from: 'your_twilio_num',
+            to: 'your_num'
         })
         .then(message => console.log(message.sid))
         .catch(err => console.error(err));
